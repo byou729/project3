@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const menuItem = new Schema({
-  _id: {
-    type: Number,
-    allowNull: false,
-    unique: true,
-    primaryKey: true,
-    autoIncrement: true,
-    validate: {
-    }
-  },
+//   _id: {
+//     type: Number,
+//     allowNull: false,
+//     unique: true,
+//     primaryKey: true,
+//     autoIncrement: true,
+//     validate: {
+//     }
+//   },
   title: {
     type: String,
     allowNull: false,
