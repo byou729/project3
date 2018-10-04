@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const category = new Schema({
-  _id: {
-    type: Number,
-    unique: true,
-    primaryKey: true,
-    autoIncrement: true,
-    validate: {
-    }
-  },
+//   _id: {
+//     type: Number,
+//     unique: true,
+//     primaryKey: true,
+//     autoIncrement: true,
+//     validate: {
+//     }
+//   },
   name: {
     type: String,
     unique: true,
