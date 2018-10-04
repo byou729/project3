@@ -4,28 +4,28 @@ var Schema = mongoose.Schema;
 
 var Categories = new Schema({
   
-    id: {
-        type: Sequelize.INTEGER,
-        unique: true,
-        primaryKey: true,
-        autoIncrement: true,
-        validate: {
-        }
-      },
+    // _id: {
+    //     type: Sequelize.INTEGER,
+    //     unique: true,
+    //     primaryKey: true,
+    //     autoIncrement: true,
+    //     validate: {
+    //     }
+    //   },
       name: {
-        type: Sequelize.STRING,
+        type: String,
         unique: true,
         validate: {
         }
       },
       active: {
-        type: Sequelize.BOOLEAN,
+        type: Boolean,
         allowNull: false,
         validate: {
         }
       },
       sortOrder: {
-        type: Sequelize.INTEGER,
+        type: Number,
         allowNull: false,
         validate: {
         }
