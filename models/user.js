@@ -13,30 +13,30 @@ const user = new Schema({
 //   },
   login: {
     type: String,
-    allowNull: false,
-    unique: true,
-    validate: {
-    }
+// //     allowNull: false,
+// //     unique: true,
+// //     validate: {
+// //     }
   },
-  password: {
-    type: String,
-    allowNull: false,
-    validate: {
-    }
-  },
-  email: {
-    type: String,
-    allowNull: false,
-    unique: true,
-    validate: {
-      isEmail: true,
-    }
-  },
-  admin: {
-    type: Boolean,
-    validate: {
-    }
-  }
+//   password: {
+//     type: String,
+//     allowNull: false,
+//     validate: {
+//     }
+//   },
+//   email: {
+//     type: String,
+//     allowNull: false,
+//     unique: true,
+//     validate: {
+//       isEmail: true,
+//     }
+//   },
+//   admin: {
+//     type: Boolean,
+//     validate: {
+//     }
+//   }
 });
 
 const User = mongoose.model("User", user);

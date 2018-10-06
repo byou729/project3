@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var Categories = new Schema({
+var MenuItems = new Schema({
   
     // _id: {
     //     type: Sequelize.INTEGER,
@@ -34,6 +34,6 @@ var Categories = new Schema({
   
 });
 
-var Model = mongoose.model("Categories", Categories);
+var Model = mongoose.model("MenuItems", MenuItems);
 
 module.exports = Model;

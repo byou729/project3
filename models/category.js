@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const category = new Schema({
+const categorySchema = new Schema({
 //   _id: {
 //     type: Number,
 //     unique: true,
@@ -12,24 +12,24 @@ const category = new Schema({
 //   },
   name: {
     type: String,
-    unique: true,
-    validate: {
-    }
+    // unique: true,
+    // validate: {
+    // }
   },
-  active: {
-    type: Boolean,
-    allowNull: false,
-    validate: {
-    }
-  },
-  sortOrder: {
-    type: Number,
-    allowNull: false,
-    validate: {
-    }
-  }
+//   active: {
+//     type: Boolean,
+//     allowNull: false,
+//     validate: {
+//     }
+//   },
+//   sortOrder: {
+//     type: Number,
+//     allowNull: false,
+//     validate: {
+//     }
+//   }
 });
 
-const Category = mongoose.model("Category", category);
+const Category = mongoose.model("Category", categorySchema);
 
 module.exports = Category;
