@@ -1,44 +1,33 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const user = new Schema({
-//   _id: {
-//     type: Number,
-//     allowNull: false,
-//     unique: true,
-//     primaryKey: true,
-//     autoIncrement: true,
-//     validate: {
-//     }
-//   },
-  login: {
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+var UserSchema = new Schema({
+  username: {
     type: String,
-// //     allowNull: false,
-// //     unique: true,
-// //     validate: {
-// //     }
+    trim: true,
+    required: "Username is Required"
   },
-//   password: {
-//     type: String,
-//     allowNull: false,
-//     validate: {
-//     }
-//   },
-//   email: {
-//     type: String,
-//     allowNull: false,
-//     unique: true,
-//     validate: {
-//       isEmail: true,
-//     }
-//   },
-//   admin: {
-//     type: Boolean,
-//     validate: {
-//     }
-//   }
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is Required",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password should be longer."
+    ]
+  },
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  },
+  userCreated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-const User = mongoose.model("User", user);
+var User = mongoose.model("User", UserSchema);
 
 module.exports = User;

@@ -2,32 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
-//   _id: {
-//     type: Number,
-//     unique: true,
-//     primaryKey: true,
-//     autoIncrement: true,
-//     validate: {
-//     }
-//   },
-  name: {
-    type: String,
-    // unique: true,
-    // validate: {
-    // }
-  },
-//   active: {
-//     type: Boolean,
-//     allowNull: false,
-//     validate: {
-//     }
-//   },
-//   sortOrder: {
-//     type: Number,
-//     allowNull: false,
-//     validate: {
-//     }
-//   }
+    category: {
+        type: String,
+        trim: true,
+        required: "category is Required"
+    },
+    sortOrder: {
+        type: Number,
+        unique: true,
+        required: "sort order is Required"
+      }
 });
 
 const Category = mongoose.model("Category", categorySchema);

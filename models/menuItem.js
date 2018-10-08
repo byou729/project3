@@ -2,53 +2,35 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const menuItemSchema = new Schema({
-//   _id: {
-//     type: Number,
-//     allowNull: false,
-//     unique: true,
-//     primaryKey: true,
-//     autoIncrement: true,
-//     validate: {
-//     }
-//   },
-  title: {
+  name: {
     type: String,
-    // allowNull: false,
-    // unique: true,
-    // validate: {
-    // }
+    trim: true,
+    required: "item name is Required"
   },
-  // image: {
-  //   type: String,
-  //   validate: {
-  //     isUrl: true,
-  //   }
-  // },
-  // description: {
-  //   type: String,
-  //   allowNull: false,
-  //   validate: {
-  //   }
-  // },
-  // categoryId: {
-  //   type: Number,
-  //   allowNull: false,
-  //   validate: {
-  //   }
-  // },
-  // sortOrder: {
-  //   type: Number,
-  //   allowNull: false,
-  //   unique: true,
-  //   validate: {
-  //   }
-  // },
-  // price: {
-  //   type: Number,
-  //   allowNull: false,
-  //   validate: {
-  //   }
-  // }
+  category: {
+    type: String,
+    trim: true,
+    required: "category is Required"
+  },
+  description: {
+    type: String,
+    trim: true,
+    required: "description is Required"
+  },
+  image: {
+    type: String,
+    data: Buffer,
+    required: "description is Required"
+  },
+  sortOrder: {
+    type: Number,
+    unique: true,
+    required: "sort order is Required"
+  },
+  price: {
+    type: Schema.Types.Decimal128,
+    required: "price is Required"
+  },
 
 });
 
