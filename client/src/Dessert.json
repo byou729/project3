@@ -1,0 +1,25 @@
+[
+    {
+
+    "id": 1,
+    "name": "Milk Shakes",
+    "category": "dessert",
+    "image": "https://drive.google.com/uc?id=1GItjDeyfkuoVdcgVLkcQt4qBrLbX7kXu",
+    "price": "$2.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    },
+    
+    {
+
+    "id": 2,
+    "name": "Fresh Baked Cobbler",
+    "category": "dessert",
+    "image": "https://drive.google.com/uc?id=1aPAT6PyftXpMui4yvJLzHo0cCexpvjwb",
+    "price": "$3.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    }
+
+   
+]
