@@ -1,5 +1,5 @@
 module.exports = {
     Category: require("./category"),
-    MenuItem: require("./meunItem"),
+    MenuItem: require("./menuItem"),
     User: require("./user")
   };
