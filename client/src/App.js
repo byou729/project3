@@ -30,13 +30,7 @@ class App extends Component {
         <Route exact path="/dessert" component={Dessert} />
       </div>
     </Router>
-<<<<<<< HEAD
 
-      
-
-=======
->>>>>>> b7f122300f2d44c557f24a68688891e5de9915c4
->>>>>>> 11fe930853b6f59f87cccc67e76e34fbab1eec46
       </div>
     );
   }
