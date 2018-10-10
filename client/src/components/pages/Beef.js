@@ -1,15 +1,23 @@
 import React from "react";
 import Containers from '../Containers'
 import {withRouter} from 'react-router-dom'
+import { Container, Row, Col } from "reactstrap";
+import "./Pages.css";
 
-const Beef = (props) => {
-  console.log(props)
-  return (
+const Beef = () => (
   <div>
-    <h1>Menu</h1>
+  
+    <Container>
+      <Row>
+        <Col lg="12">
+          <h1 className="title">Menu</h1>
+        </Col>
+      </Row>
+    </Container>
+
     <Containers />
+
   </div>
-  )
-};
+);
 
 export default withRouter(Beef);

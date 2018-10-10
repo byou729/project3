@@ -63,8 +63,7 @@ class Containers extends Component {
         )
     }
 }
-//if on chicken page loop through chicken.json, if on beef page loop through beef.json
-//or if on chicken page loop through every item in the chicken category (has a category value of chicken)
+
 export default withRouter(Containers);
 
 

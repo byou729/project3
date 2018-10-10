@@ -1,6 +1,7 @@
 import React from "react";
 import Containers from '../Containers'
 import { Container, Row, Col } from "reactstrap";
+import "./Pages.css";
 
 const Chicken = () => (
   
