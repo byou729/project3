@@ -1,16 +1,25 @@
 import React from "react";
+import Containers from '../Containers'
+import { Container, Row, Col } from "reactstrap";
+import "./Pages.css";
 
 const Chicken = () => (
+  
   <div>
-    <h1>Chicken Page</h1>
-    <p>
-      Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui mauris,
-      ut interdum nunc egestas sed. Aenean sed mollis diam. Nunc aliquet risus ac finibus porta. Nam
-      quis arcu non lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-      imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed rhoncus mollis
-      diam, sit amet facilisis lectus blandit at.
-    </p>
+  
+    <Container>
+      <Row>
+        <Col lg="12">
+          <h1 className="title">Menu</h1>
+        </Col>
+      </Row>
+    </Container>
+
+    <Containers />
+
   </div>
+    
+  
 );
 
 export default Chicken;
