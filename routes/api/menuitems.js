@@ -6,6 +6,8 @@ router.route("/")
   .get(menuItemController.findAll)
   .post(menuItemController.create);
 
+  router.route("/:category")
+  .get(menuItemController.findByCategory)
 // Matches with "/api/menuitems/:id"
 router
   .route("/:id")

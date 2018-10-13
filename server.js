@@ -18,6 +18,13 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mua");
 
+app.get("/api/chicken", function(req, res) {
+  // Create a new user using req.body
+  MenuItems.find({category}).then(chicken =>{
+    res.json(chicken);
+  }) 
+});
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
