@@ -19,7 +19,7 @@ const menuItemSchema = new Schema({
   },
   image: {
     type: String,
-    data: Buffer,
+    trim: true,
     required: "image link is a URL"
   },
   sortOrder: {
@@ -28,13 +28,13 @@ const menuItemSchema = new Schema({
     required: "sort order is Required"
   },
   price: {
-    type: Schema.Types.Decimal128,
+    type: String,
     required: "price is Required"
   },
-  category: [{
-    type: Schema.Types.ObjectId,
-    ref: "category"
-}]
+//   // category: [{
+//   //   type: Schema.Types.ObjectId,
+//   //   ref: "category"
+// }]
 
 });
 
