@@ -12,10 +12,10 @@ const categorySchema = new Schema({
         unique: true,
         required: "sort order is Required"
     },
-    menuItem: [{
-        type: Schema.Types.ObjectId,
-        ref: "menuItem"
-    }]
+    // menuItem: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: "menuItem"
+    // }]
 });
 
 const Category = mongoose.model("Category", categorySchema);
