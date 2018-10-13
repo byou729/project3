@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Chicken from "./components/pages/Chicken";
-import Beef from "./components/pages/Beef";
-import Sides from "./components/pages/Sides";
-import Dessert from "./components/pages/Dessert";
+import Navbar from "./Menu/components/Navbar";
+import Chicken from "./Menu/components/pages/Chicken";
+import Beef from "./Menu/components/pages/Beef";
+import Sides from "./Menu/components/pages/Sides";
+import Dessert from "./Menu/components/pages/Dessert";
 
 //import './App.css';
 
