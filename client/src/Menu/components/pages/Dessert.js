@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom'
 import { Container, Row, Col } from "reactstrap";
 import "./Pages.css";
 
-const Beef = () => (
+const Dessert= () => (
   <div>
   
     <Container>
@@ -15,9 +15,9 @@ const Beef = () => (
       </Row>
     </Container>
 
-    <Containers />
+    <Containers category="Dessert" />
 
   </div>
 );
 
-export default withRouter(Beef);
+export default withRouter(Dessert);

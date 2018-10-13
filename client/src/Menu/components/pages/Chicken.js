@@ -1,10 +1,10 @@
 import React from "react";
 import Containers from '../Containers'
-import {withRouter} from 'react-router-dom'
 import { Container, Row, Col } from "reactstrap";
 import "./Pages.css";
 
-const Sides = () => (
+const Chicken = () => (
+  
   <div>
   
     <Container>
@@ -15,9 +15,11 @@ const Sides = () => (
       </Row>
     </Container>
 
-    <Containers />
+    <Containers category="Chicken" />
 
   </div>
+    
+  
 );
 
-export default withRouter(Sides);
+export default Chicken;
