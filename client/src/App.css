@@ -1,20 +1,31 @@
-h1 {
+::-moz-selection { /* Code for Firefox */
+  color: #444;
+  background: transparent;
+}
+
+::selection {
+  color: #444;
+  background: transparent;
+}
+
+h2 {
   cursor: move;
   border:0;
   background:#f8f9fa;
   color:#444;
-}
-.delete {
-  border:0;
-  background:transparent;
-  color:darkred;
-  font-weight: bolder;
-  font-size:2rem;
-  cursor: pointer;
 }
 i {
   cursor: pointer;
   color:darkgreen;
   font-weight: bolder;
   font-size:2rem;
+}
+.delete-btn {
+  float: right;
+  border:0;
+  background:transparent;
+  color:darkred;
+  font-weight: bolder;
+  font-size:2rem;
+  cursor: pointer;
 }

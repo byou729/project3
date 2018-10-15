@@ -1,0 +1,56 @@
+::-moz-selection { /* Code for Firefox */
+  color: #444;
+  background: transparent;
+}
+
+::selection {
+  color: #444;
+  background: transparent;
+}
+
+h2 {
+  cursor: move;
+  border:0;
+  background:#f8f9fa;
+  color:#444;
+}
+.add-btn {
+  float: left;
+  border:0;
+  background:transparent;
+  color:darkred;
+  font-weight: bolder;
+  font-size:2rem;
+  cursor: pointer;
+}
+.delete-btn {
+  border:0;
+  background:transparent;
+  color:darkred;
+  font-weight: bolder;
+  font-size:2rem;
+  cursor: pointer;
+}
+#submit {
+  width: 75px;
+  background:darkred;
+  color:white;
+  cursor: pointer;
+}
+a {
+  color: darkred;
+  text-align: center;  
+  display: inline-block;
+  width: 380px;
+  font-weight: bold;
+  font-size: xx-large;
+  text-decoration: none;
+  margin: 5px;
+}
+button {
+  border: 0;
+  background: transparent;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

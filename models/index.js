@@ -1,5 +1,4 @@
 module.exports = {
-    Category: require("./category"),
-    MenuItem: require("./meunItem"),
-    User: require("./user")
-  };
+  Category: require("./category"),
+  MenuItem: require("./menuItem"),
+};
