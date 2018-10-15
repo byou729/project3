@@ -20,6 +20,7 @@ class App extends Component {
         </header> */}
       <Router>
       <div>
+
         <Navbar />
         <Route exact path="/" component={Chicken} />
         <Route exact path="/beef" component={Beef} />
