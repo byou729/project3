@@ -11,7 +11,6 @@ const Chicken = () => (
       <Row>
         <Col lg="12">
           <h1 className="title">Menu</h1>
-          <a href='https://www.google.com'>Hello 2</a>
         </Col>
       </Row>
     </Container>
