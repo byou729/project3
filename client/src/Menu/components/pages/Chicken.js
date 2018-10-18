@@ -3,6 +3,7 @@ import Containers from '../Containers'
 import { Container, Row, Col } from "reactstrap";
 import Navbar from '../Navbar';
 import "./Pages.css";
+import Modal from "../Modal"
 
 const Chicken = () => (
   
@@ -18,9 +19,10 @@ const Chicken = () => (
 
     <Containers category="Chicken" />
 
+    <a className="custom" href="/cats">Customize Menu</a>
+
   </div>
-    
-  
+   
 );
 
 export default Chicken;

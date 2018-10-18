@@ -18,6 +18,8 @@ const Beef = () => (
 
     <Containers category="Beef" />
 
+    <a className="custom" href="/cats">Customize Menu</a>
+
   </div>
 );
 

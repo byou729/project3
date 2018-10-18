@@ -18,6 +18,8 @@ const Dessert= () => (
 
     <Containers category="Dessert" />
 
+    <a className="custom" href="/cats">Customize Menu</a>
+
   </div>
 );
 

@@ -24,6 +24,6 @@ const App = () => (
       <Route exact path="/cats" component={Categories} />
       <Route exact path="/cust/:id" component={Items} />
       </Switch>
-  </Router>
+  </Router> 
 );
 export default App;
