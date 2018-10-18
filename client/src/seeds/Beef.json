@@ -1,0 +1,47 @@
+[
+    {
+
+    "id": 1,
+    "name": "Classic Burger",
+    "category": "beef",
+    "image": "https://drive.google.com/uc?id=19RpA6lm9_TxvJZ3u7YeuKnhpF84JnT-9",
+    "price": "$5.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    },
+    
+    {
+
+    "id": 2,
+    "name": "Classic Double Burger",
+    "category": "beef",
+    "image": "https://drive.google.com/uc?id=11VPjJuCmH9NNz7pb_ET3zACGoSUXAkDh",
+    "price": "$6.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    },
+
+    {
+
+    "id": 3,
+    "name": "Bacon Cheddar Burger",
+    "category": "beef",
+    "image": "https://drive.google.com/uc?id=1EyzrkCfGXNK_vbt5mIURjbdwuYy0MBS0",
+    "price": "$6.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+    },
+
+    {
+
+    "id": 4,
+    "name": "Mushroom Swiss Burger",
+    "category": "beef",
+    "image": "https://drive.google.com/uc?id=1PkRZvsPEOkv9Xf_XuCIOr5w1yzoT35wD",
+    "price": "$6.99",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                
+    }
+
+   
+]

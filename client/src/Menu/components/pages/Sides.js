@@ -1,12 +1,13 @@
 import React from "react";
-import Containers from '../Containers'
+import Containers from '../Containers';
+import Navbar from '../Navbar';
 import {withRouter} from 'react-router-dom'
 import { Container, Row, Col } from "reactstrap";
 import "./Pages.css";
 
 const Sides = () => (
   <div>
-  
+  <Navbar />
     <Container>
       <Row>
         <Col lg="12">

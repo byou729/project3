@@ -1,0 +1,24 @@
+::-moz-selection { /* Code for Firefox */
+  color: #444;
+  background: transparent;
+}
+
+::selection {
+  color: #444;
+  background: transparent;
+}
+i {
+  cursor: pointer;
+  color:darkgreen;
+  font-weight: bolder;
+  font-size:2rem;
+}
+.delete-btn {
+  float: right;
+  border:0;
+  background:transparent;
+  color:darkred;
+  font-weight: bolder;
+  font-size:2rem;
+  cursor: pointer;
+}

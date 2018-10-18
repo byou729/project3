@@ -7,10 +7,9 @@ const menuItemSchema = new Schema({
     trim: true,
     required: "item name is Required"
   },
-  category: {
+  category:{
     type: String,
-    trim: true,
-    required: "category is Required"
+    trim: true
   },
   description: {
     type: String,
@@ -19,7 +18,7 @@ const menuItemSchema = new Schema({
   },
   image: {
     type: String,
-    trim: true,
+    data: Buffer,
     required: "image link is a URL"
   },
   sortOrder: {
@@ -31,11 +30,6 @@ const menuItemSchema = new Schema({
     type: String,
     required: "price is Required"
   },
-//   // category: [{
-//   //   type: Schema.Types.ObjectId,
-//   //   ref: "category"
-// }]
-
 });
 
 const MenuItem = mongoose.model("MenuItem", menuItemSchema);

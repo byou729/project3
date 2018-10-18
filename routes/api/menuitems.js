@@ -6,13 +6,15 @@ router.route("/")
   .get(menuItemController.findAll)
   .post(menuItemController.create);
 
-  router.route("/:category")
-  .get(menuItemController.findByCategory)
 // Matches with "/api/menuitems/:id"
 router
   .route("/:id")
   .get(menuItemController.findById)
   .put(menuItemController.update)
   .delete(menuItemController.remove);
+
+router
+  .route("/pub/:category")
+  .get(menuItemController.findByCategory);
 
 module.exports = router;
