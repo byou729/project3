@@ -7,13 +7,6 @@
   color: #444;
   background: transparent;
 }
-
-h2 {
-  cursor: move;
-  border:0;
-  background:#f8f9fa;
-  color:#444;
-}
 i {
   cursor: pointer;
   color:darkgreen;

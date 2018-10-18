@@ -1,0 +1,26 @@
+nav {
+    margin-top: 25px;
+    width: 100%; 
+}
+
+a {
+    color: darkred;
+    text-align: center;  
+    display: inline-block;
+    width: 380px;
+    font-weight: bold;
+    font-size: xx-large;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+
+.current {
+    text-decoration: none;
+    color: darkred;
+    border-bottom: 10px solid darkred;
+}

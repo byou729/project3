@@ -1,6 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Div from '../../../components/div';
 import Form from '../../../components/Form';
 import Button from '../../../components/button';
@@ -15,23 +15,16 @@ import API from '../../../../utils/API';
 //sortableItem function with value passed into it to call it within JSX
 const SortableItem = SortableElement(({value,onClick}) =>
   //{value} = arrayElements
-  <div className='col-lg-3 d-inline-block'>
-    {/* <Form onSubmit={onSubmit}> */}
-    {/* <a href={'/'+value._id} id={value._id} name='editCat' onClick={onClick}>✎</a> */}
-    {/* </Form> */}
-    {/* <button id={value._id} className='inline-block' type='submit' onSubmit={onSubmit}>✎</button> */}
-    
-    <h2 key={value._id} className='shadow bg-light p-3 display-6 inline-block'>{value.category}</h2>
-    <button id={value._id} className='delete-btn d-inline-block ml-5' name='editCat' onClick={onClick}>✎</button>
-    <button id={value._id} className='delete-btn d-inline-block ml-5' name='deleteCat' onClick={onClick}>X</button> 
-     
-    {/* <button id={value._id} className='delete-btn d-inline-block ml-5' onClick={onClick}>X</button> */}
+  <div className='col-lg-3 d-inline-block m'>
+    <button id={value._id} className='delete-btn float-left d-inline-block' name='editCat' onClick={onClick}>✎</button>
+    <button id={value._id} className='delete-btn float-right d-inline-block' name='deleteCat' onClick={onClick}>x</button> 
+    <h1 key={value._id} className='shadow bg-light display-1 inline-block'>{value.category}</h1>
   </div>
 );
 
 //sortableList functions with itemsArray passed into it using .map to list each element
 const SortableList = SortableContainer(({items,onClick}) => 
-    <div className='d-inline-block'>
+    <div className='d-flex justify-content-center'>
       {items.map((value, index) => (
         <SortableItem key={`cat-${index}`} id={value.id} index={index} value={value} onClick={onClick}/>
       ))}
@@ -39,7 +32,7 @@ const SortableList = SortableContainer(({items,onClick}) =>
 );
 
 //Class App that has methods and render method
-export default class Customization extends Component {
+class CustomCats extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -68,8 +61,7 @@ export default class Customization extends Component {
       })
       .catch(err => console.log(err));
     }
-
-
+    
     //Saving Category function
     addCat = (e)=>{
       e.preventDefault();
@@ -79,7 +71,7 @@ export default class Customization extends Component {
       API.saveCat(
             {
               category:category,
-              sortOrder:this.state.items.length
+              sortOrder:this.state.items.length+6
             }
             ).then(res=> this.loadCats())
       e.target.reset();
@@ -96,75 +88,32 @@ export default class Customization extends Component {
     //Edit Category by _id
       editCat = (e)=>{
         console.log(e.target.id)
-        // this.props.history.push('/' + e.target.id)
-        // console.log(this.props.match.params)
-        const {id} = e.target;
-        console.log('catid',id)
-        API.getCat(id)
-          .then(res=>{
-
-            if(res.data.menuItem.length){
-              res.data.menuItem.map((e,i,arr)=>{
-                // console.log(i,e);
-                API.getItem(e)
-                  .then(res =>this.setState({
-                    menuItems:[...this.state.menuItems,res.data]
-                  }
-                    
-                  ))
-              })
-            } else{
-              return console.log('no item data found')
-            }
-
-          }
-   
-            )
-
-        // this.setState({displayCat:!this.state.displayCat},()=>{console.log(this.state.displayCat)});//Mohammed to search for the resolution
-        //grabbing the id of clicked cat
-        // const {id} = e.target;
-        //invoke api to get cat by its id and set the categories: res.data
-          //then res.data.map {
-            /*
-              create dom with 
-                e.menuItem.map(
-                  h1 catName
-                  form
-                  title input,price input,desc.input, pictureinput and save'submit' button
-                  )
-
-                'Save' button will call the Api.post route creating menu item. 
-                    then {
-                      loadItems() [similar to loadCats but set the items state to ]
-                    }
-            */
-          //}
-        
-        // console.log(id)
-        
+        this.props.history.push('/cust/' + e.target.id)
+        console.log(this.props) 
       }
       //Display Category
       displayCat = ()=>{
 
         return(
         <Fragment>
-        <Div className='container-fluid'>
+        <Div className='container'>
           <Div className='row'>
             <Div className='form-group'>
               <Form onSubmit={this.addCat}>
                 <Label for='category'>Category:
                 <Input type='text' className='form-control'name='category' onChange={this.handleChange}/>
-                </Label><br/>  
-                <Input id='submit' type='submit' value='Add +'/>
+                </Label> 
+                <Input id='submit' type='submit' value='+'/>
               </Form>
             </Div>
           </Div>
         </Div>
-        <Div className='row d-flex justify-content-center align-content-center'>
-          <Div className='displayChg d-flex justify-content-center align-content-center'>
-          <SortableList axis='x' items={this.state.items} onSortEnd={this.onSortEnd} 
-            onClick={(data)=>{data.target.name === 'deleteCat' ? this.deleteCat(data):this.editCat(data)}}/>
+        <Div className='container-fluid'>
+          <Div className='row d-flex justify-content-center align-content-center'>
+            <Div className='displayChg d-flex justify-content-center align-content-center'>
+            <SortableList axis='x' items={this.state.items} onSortEnd={this.onSortEnd} 
+              onClick={(data)=>{data.target.name === 'deleteCat' ? this.deleteCat(data):this.editCat(data)}}/>
+            </Div>
           </Div>
         </Div>
         </Fragment>
@@ -187,7 +136,7 @@ export default class Customization extends Component {
       items: arrayMove(this.state.items, oldIndex, newIndex),
     })
     //logging the updated state to verify state position
-    console.log(this.state.items);
+    console.log(this.state.items,oldIndex,newIndex);
   };
   render() {
 
@@ -195,39 +144,12 @@ export default class Customization extends Component {
 
       <Fragment>
         {this.displayCat()}
-
-        <br/>
-        
-        {this.state.menuItems.map((e,i)=>{
-          return (
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='col-3'>
-                <h2 className='itemName text-left display-2' key={i}>{e.name}</h2>
-              </div>
-              <div className='col-3'>
-                <img className='itemPic text-center' src={e.image} key={i}/>
-              </div>
-              <div className='col-3'>
-                <h5 className='itemPrice text-center display-5' key={i}>{e.price}</h5>
-              </div>
-              <div className='col-3'>
-                <p className='itemDesc text-center display-6' key={i}>{e.description}</p>
-              </div>
-            </div>
-            
-
-          </div>  
-          
-          
-
-          )
-        })}
-
       </Fragment>
     )
   }
 }
+
+export default withRouter(CustomCats);
 
 /*
 

@@ -13,4 +13,8 @@ router
   .put(menuItemController.update)
   .delete(menuItemController.remove);
 
+router
+  .route("/pub/:category")
+  .get(menuItemController.findByCategory);
+
 module.exports = router;

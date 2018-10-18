@@ -27,12 +27,20 @@ export default {
     return axios.post("/api/menuItems", itemData)
   },
   //update cat to push menuItems with associated cat
-  updateCat: function(id,method,boo){
-    return axios.put("/api/categories/" + id)
+  updateCat: function(id,itemId){
+    return axios.put("/api/categories/" + id,{$push:{menuItem:itemId}},{new:true})
 
   },
   // Gets the menuItem with the given id
   getItem: function(id) {
     return axios.get("/api/menuItems/" + id);
   },
+  // Deletes the cat with the given id
+  deleteItem: function(id) {
+    return axios.delete("/api/menuItems/" + id);
+  },
+
+  findItemsByCategory: function(category) {
+    return axios.get("/api/menuitems/pub/" + category)
+  }
 };
