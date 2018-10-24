@@ -5,6 +5,7 @@ import Navbar from '../Navbar';
 import "./Pages.css";
 import Modal from "../Modal"
 
+
 const Chicken = () => (
   
   <div>
@@ -19,7 +20,7 @@ const Chicken = () => (
 
     <Containers category="Chicken" />
 
-    <a className="custom" href="/cats">Customize Menu</a>
+    <a className="custom" href="/login">Customize Menu</a>
 
   </div>
    

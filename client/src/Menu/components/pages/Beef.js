@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import { Container, Row, Col } from "reactstrap";
 import "./Pages.css";
 
+
 const Beef = () => (
   <div>
     <Navbar />
@@ -18,7 +19,7 @@ const Beef = () => (
 
     <Containers category="Beef" />
 
-    <a className="custom" href="/cats">Customize Menu</a>
+    <a className="custom" href="/login">Customize Menu</a>
 
   </div>
 );

@@ -9,7 +9,7 @@ import Label from '../../../components/label';
 import Input from '../../../components/input';
 import './App.css';
 import API from '../../../../utils/API';
-
+import fire from "../../../../config/Fire";
 
 
 //sortableItem function with value passed into it to call it within JSX
@@ -35,6 +35,7 @@ const SortableList = SortableContainer(({items,onClick}) =>
 class CustomCats extends Component {
   constructor(props){
     super(props)
+    this.logout = this.logout.bind(this);
     this.state = {
       //updating items with the 
       items: [],
@@ -91,6 +92,12 @@ class CustomCats extends Component {
         this.props.history.push('/cust/' + e.target.id)
         console.log(this.props) 
       }
+
+    //Logout
+      logout() {
+        fire.auth().signOut();
+    }
+
       //Display Category
       displayCat = ()=>{
 
@@ -143,6 +150,7 @@ class CustomCats extends Component {
     return (
 
       <Fragment>
+      <button onClick={this.logout}>Logout</button>
         {this.displayCat()}
       </Fragment>
     )
