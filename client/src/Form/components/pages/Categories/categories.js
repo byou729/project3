@@ -15,11 +15,13 @@ import API from '../../../../utils/API';
 //sortableItem function with value passed into it to call it within JSX
 const SortableItem = SortableElement(({value,onClick}) =>
   //{value} = arrayElements
-  <div className='col-lg-3 d-inline-block m'>
-    <button id={value._id} className='delete-btn float-left d-inline-block' name='editCat' onClick={onClick}>✎</button>
-    <button id={value._id} className='delete-btn float-right d-inline-block' name='deleteCat' onClick={onClick}>x</button> 
+  // <div className='col-lg-3 d-inline-block m'>
+  <div className='p-5'>
+    <button id={value._id} className='delete-btn float-left d-inline-block ml-5' name='editCat' onClick={onClick}>✎</button>
     <h1 key={value._id} className='shadow bg-light display-1 inline-block'>{value.category}</h1>
+    <button id={value._id} className='delete-btn float-right d-inline-block' name='deleteCat' onClick={onClick}>x</button> 
   </div>
+  // </div>
 );
 
 //sortableList functions with itemsArray passed into it using .map to list each element
@@ -96,11 +98,14 @@ class CustomCats extends Component {
 
         return(
         <Fragment>
-        <Div className='container'>
-          <Div className='row'>
+        <Div className='container-fluid'>
+          <Div className='row d-flex justify-content-center'>
+            <img className='img-fluid' src='./mualogosm.jpg'/>
+          </Div>
+          <Div className='row d-flex justify-content-center'>
             <Div className='form-group'>
-              <Form onSubmit={this.addCat}>
-                <Label for='category'>Category:
+              <Form className='form-inline p-3' onSubmit={this.addCat}>
+                <Label for='category mr-3'>Add <br/>Category:  
                 <Input type='text' className='form-control'name='category' onChange={this.handleChange}/>
                 </Label> 
                 <Input id='submit' type='submit' value='+'/>
@@ -152,25 +157,13 @@ class CustomCats extends Component {
 export default withRouter(CustomCats);
 
 /*
+-onSortEnd - update the catId sortOrder to newIndex
+	  - update the menuItem sortOrder to newIndex
 
-- CatDetailPage
-assign db_id to key prop (key prop = catDB_id) so admin can use onclick delete & edit function on each category. DONE
+-Seed the data with all the items correct their sortOrder
+-delete item and pop from the cat collection
 
-  on delete remove category by invoking deleteCat(). - DONE
-
-  on click of pencil icon it will hit the route "/api/categories/:id" to render catdata and its menuItems
-    - create input with placholder = res.data[0].category with button to save ()=>{update catNamefunction} (NTH)
-
-    MenuItems FORM:
-
-    Create a form that allows user to capture user's menuItem input {itemName:"",itemDesc.:"",itemPic:"", itemPrice:"$", catId:catFK} 3
-      on menuItem form save it will submit the formdata to db creating new menuItem with cat_id = :/id 4
-        reload the data with catName, menuItems
-
-        Initial State = {
-          categories: [{...}] //DB DATA
-          items: [] //shuffling of menuItems as NTH
-        }
-
-
+-Demo only the dessertCat:
+  Have the data ready to add and delete item
+  
 */

@@ -17,7 +17,7 @@ const Sides = () => (
     </Container>
 
     <Containers category="Sides" />
-
+    <a className="custom" href="/cats">Customize Menu</a>
   </div>
 );
 

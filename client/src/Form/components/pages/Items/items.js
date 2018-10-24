@@ -49,26 +49,36 @@ class CustomItems extends Component {
     componentWillMount() {
             console.log(this.props.match.params.id);
                 //load items fn
-                API.getCat(this.props.match.params.id)
-                .then(res =>{
-                    // console.log(res.data);
-                    this.setState({category:res.data.category})
-                        
-                   console.log(this.state.category)
-                    res.data.menuItem.map(itemId=>{
-                        console.log(itemId);
-                        API.getItem(itemId)
-                        .then(res=>{
-                            console.log(res.data)
-                            this.setState({
-                                items:[...this.state.items,res.data]
-                            })
-                        })
-                    })
-                    
-                })
+                this.loadItems();
+
     }
 
+    loadItems = ()=>{
+
+
+
+        API.getCat(this.props.match.params.id)
+        .then(res =>{
+            // console.log(res.data);
+            this.setState({category:res.data.category})
+                
+           console.log(this.state.category)
+            res.data.menuItem.map(itemId=>{
+                console.log(itemId);
+                API.getItem(itemId)
+                .then(res=>{
+                    console.log(res.data)
+                    if (res.data){
+                    this.setState({
+                        items:[...this.state.items,res.data]
+                    })
+                    }
+
+                })
+            })
+            
+        })
+    }
 
 
     //addItem fn
@@ -84,12 +94,13 @@ class CustomItems extends Component {
                 description:this.state.description,
                 image:this.state.image,
                 price:this.state.price,
-                sortOrder:100
+                sortOrder:106
               }
               ).then(res=> {
                 API.updateCat(this.props.match.params.id,res.data._id)
                     .then(res=>{
                         console.log(res.data);
+                        this.loadItems();
                     })
               })
 
@@ -97,7 +108,12 @@ class CustomItems extends Component {
       }
 
     //deleteItem fn
-
+    deleteItem = (data)=>{
+        const {id} = data.target;
+        API.deleteItem(id)
+          .then(res=> this.loadItems())
+          .catch(err => console.log(err));
+      }
 
     // handleChange functions
     handleChange = data=>{
@@ -128,13 +144,16 @@ class CustomItems extends Component {
             <div>
                 <Div className='container-fluid'>
                 <Div className='row d-flex justify-content-center'>
+                    <img className='img-fluid' src='../mualogosm.jpg'/>
+                </Div>      
+                <Div className='row d-flex justify-content-center'>
                 
-                    <Form onSubmit={this.addItem}>
+                    <Form className='form-inline p-3' onSubmit={this.addItem}>
                     <Label for='Item'>Item:
                     <Input type='text' className='form-control'name='name' onChange={this.handleChange}/>
                     </Label> 
                     <Label for='Image'>Image:
-                    <Input type='file' className='form-control'name='image' onChange={this.handleChange}/>
+                    <Input type='file' className='form-control file'name='image' onChange={this.handleChange}/>
                     </Label> 
                     <Label for='Price'>Price:
                     <Input type='text' className='form-control'name='price' onChange={this.handleChange}/>
